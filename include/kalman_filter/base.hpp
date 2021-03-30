@@ -14,11 +14,10 @@ namespace kalman_filter {
 class base_t
 {
 public:
-    // CONSTRUCTORS
     /// \brief Instantiates a new base_t object.
     /// \param n_variables The number of variables in the state vector.
     /// \param n_observers The number of state observers.
-    base_t(uint32_t n_variables, uint32_t n_observers);
+    void initialize_filter(uint32_t n_variables, uint32_t n_observers);
 
     // FILTER METHODS
     /// \brief Initializes the UKF with a specified state and covariance.

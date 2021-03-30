@@ -3,9 +3,9 @@
 using namespace kalman_filter;
 
 // CONSTRUCTORS
-ukfa_t::ukfa_t(uint32_t n_variables, uint32_t n_observers)
-    : base_t(n_variables, n_observers)
+void ukfa_t::initialize_filter(uint32_t n_variables, uint32_t n_observers)
 {
+    base_t::initialize_filter(n_variables, n_observers);
     // Store augmented dimension sizes.
     ukfa_t::n_a = ukfa_t::n_x + ukfa_t::n_x + ukfa_t::n_z;
     ukfa_t::n_s = 1 + 2*ukfa_t::n_a;

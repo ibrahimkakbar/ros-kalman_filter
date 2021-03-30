@@ -3,9 +3,9 @@
 using namespace kalman_filter;
 
 // CONSTRUCTORS
-kf_t::kf_t(uint32_t n_variables, uint32_t n_inputs, uint32_t n_observers)
-    : base_t(n_variables, n_observers)
+void kf_t::initialize_filter(uint32_t n_variables, uint32_t n_inputs, uint32_t n_observers)
 {
+    base_t::initialize_filter(n_variables, n_observers);
     // Store dimensions.
     kf_t::n_u = n_inputs;
 

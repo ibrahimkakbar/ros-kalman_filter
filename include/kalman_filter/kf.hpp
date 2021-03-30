@@ -13,12 +13,11 @@ class kf_t
     : public base_t
 {
 public:
-    // CONSTRUCTORS
     /// \brief Instantiates a new kf_t object.
     /// \param n_variables The number of variables in the state vector.
     /// \param n_inputs The number of inputs in the state model.
     /// \param n_observers The number of state observers.
-    kf_t(uint32_t n_variables, uint32_t n_inputs, uint32_t n_observers);
+    void initialize_filter(uint32_t n_variables, uint32_t n_inputs, uint32_t n_observers);
 
     // FILTER METHODS
     void iterate() override;

@@ -3,9 +3,9 @@
 using namespace kalman_filter;
 
 // CONSTRUCTORS
-ukf_t::ukf_t(uint32_t n_variables, uint32_t n_observers)
-    : base_t(n_variables, n_observers)
+void ukf_t::initialize_filter(uint32_t n_variables, uint32_t n_observers)
 {
+    base_t::initialize_filter(n_variables, n_observers);
     // Calculate number of sigma points.
     ukf_t::n_s = 1 + 2*ukf_t::n_x;
 
@@ -118,7 +118,7 @@ void ukf_t::iterate()
     // Add mean to entire matrix.
     ukf_t::X += ukf_t::x.replicate(1,ukf_t::n_s);
 
-    // Pass predicted X through state transition function.
+    // Pass predicted X through observation function.
     for(uint32_t s = 0; s < ukf_t::n_s; ++s)
     {
         // Populate interface vector.

@@ -2,8 +2,7 @@
 
 using namespace kalman_filter;
 
-// CONSTRUCTORS
-base_t::base_t(uint32_t n_variables, uint32_t n_observers)
+void base_t::initialize_filter(uint32_t n_variables, uint32_t n_observers)
 {
     // Store dimension sizes.
     base_t::n_x = n_variables;

@@ -13,11 +13,10 @@ class ukf_t
     :public base_t
 {
 public:
-    // CONSTRUCTORS
     /// \brief Instantiates a new ukf_t object.
     /// \param n_variables The number of variables in the state vector.
     /// \param n_observers The number of state observers.
-    ukf_t(uint32_t n_variables, uint32_t n_observers);
+    void initialize_filter(uint32_t n_variables, uint32_t n_observers);
 
     // MODEL FUNCTIONS
     /// \brief Predicts a new state by transitioning from a prior state.
